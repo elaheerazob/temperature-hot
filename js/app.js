@@ -13,6 +13,7 @@ const searchButton = () =>{
 let setInnerText =(id,text) =>{
     document.getElementById(id).innerText = text;
 }
+//show temp 
 const displaytemp = temp =>{
     setInnerText ('city',temp.name);
     setInnerText('tempratur',temp.main.temp)
@@ -21,5 +22,5 @@ const displaytemp = temp =>{
     const url=`http://openweathermap.org/img/wn/${temp.weather[0].icon}@2x.png`
     const weatherIcone =document.getElementById('weither-icone');
     weatherIcone.setAttribute('src',url);
-    console.log(temp);
+    // console.log(temp);
 }
