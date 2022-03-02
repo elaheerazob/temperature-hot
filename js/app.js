@@ -5,7 +5,7 @@ const searchButton = () =>{
     const searchInputvalue = searchInput.value;
     // console.log(searchInputvalue);
     searchInput.value ='';
-    const url =`http://api.openweathermap.org/data/2.5/weather?q=${searchInputvalue}&appid=${apiKey}&units=metric`
+    const url =`https://api.openweathermap.org/data/2.5/weather?q=${searchInputvalue}&appid=${apiKey}&units=metric`
     fetch(url)
     .then(res => res.json())
     .then(data =>displaytemp(data))
@@ -19,7 +19,7 @@ const displaytemp = temp =>{
     setInnerText('tempratur',temp.main.temp)
     setInnerText('condition',temp.weather[0].main)
     //set icone
-    const url=`http://openweathermap.org/img/wn/${temp.weather[0].icon}@2x.png`
+    const url=`https://openweathermap.org/img/wn/${temp.weather[0].icon}@2x.png`
     const weatherIcone =document.getElementById('weither-icone');
     weatherIcone.setAttribute('src',url);
     // console.log(temp);
